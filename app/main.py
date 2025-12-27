@@ -26,7 +26,7 @@ app.add_middleware(
         "http://localhost:5173",   
         "https://rachits-portfolio24.vercel.app/"  
     ],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
