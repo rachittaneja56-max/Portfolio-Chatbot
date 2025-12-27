@@ -31,9 +31,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.options("/{path:path}")
-async def options_handler(path: str, request: Request):
-    return Response(status_code=200)
 
 @app.post("/chat")
 def chat(req: Question):
