@@ -1,0 +1,96 @@
+{
+  "about": {
+    "name": "Rachit Taneja",
+    "summary": "First-year Computer Science student focused on frontend engineering and AI-driven interfaces.",
+    "current_focus": [
+      "Building production-grade user interfaces",
+      "Integrating APIs into frontend applications",
+      "Using prompt engineering to design controlled AI workflows"
+    ],
+    "description": "I focus on building fast, minimal, and production-ready interfaces using React and modern frontend tooling. I explore AI as an interface layer rather than a black-box solution, emphasizing reliability, scope control, and clean system design."
+  },
+
+  "skills": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Tailwind CSS",
+    "Python",
+    "Pydantic",
+    "Git & GitHub",
+    "Prompt Engineering",
+    "API Integration",
+    "Deployment (Vercel)"
+  ],
+
+  "projects": [
+    {
+      "name": "PromptVault",
+      "problem": "Managing and reusing AI prompts becomes unstructured and error-prone when prompts are mixed across users or use cases.",
+      "solution": "Built a prompt management tool that isolates prompts per user using localStorage namespaces, enabling clean separation without authentication or backend dependency.",
+      "features": [
+        "Per-user prompt isolation using namespaced localStorage keys",
+        "Create, edit, and delete prompts",
+        "Minimal and distraction-free UI for focused usage"
+      ],
+      "tech_stack": [
+        "React",
+        "Tailwind CSS",
+        "LocalStorage"
+      ],
+      "engineering_focus": [
+        "Client-side state management",
+        "Data isolation without backend services",
+        "Component-driven UI architecture"
+      ],
+      "key_learning": "Learned how to design user-scoped data systems on the client side and how to balance simplicity with usability in UI design."
+    },
+    {
+      "name": "JavaScript Playground",
+      "problem": "Core JavaScript concepts are often learned passively without enough hands-on, focused practice.",
+      "solution": "Created a collection of small, focused JavaScript mini-projects, each designed to reinforce a specific concept through direct interaction.",
+      "features": [
+        "Independent mini-projects targeting individual JavaScript concepts",
+        "Hands-on learning instead of theory-heavy explanations",
+        "Simple UI to keep focus on logic rather than design complexity"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "engineering_focus": [
+        "JavaScript fundamentals",
+        "Event handling",
+        "DOM manipulation",
+        "Problem decomposition"
+      ],
+      "key_learning": "Strengthened foundational JavaScript understanding by repeatedly applying concepts in small, isolated problem spaces."
+    }
+  ],
+
+  "certifications": [
+    {
+      "name": "McKinsey Forward Program",
+      "organization": "McKinsey & Company",
+      "focus": "Structured problem solving, professional communication, and digital mindset"
+    },
+    {
+      "name": "AI Tools Skill Up",
+      "organization": "GeeksforGeeks – Nation Skill Up",
+      "focus": "Hands-on exposure to modern AI tools and practical AI workflows"
+    }
+  ],
+
+  "blog": {
+    "status": "Coming Soon",
+    "description": "I will be sharing technical learnings, project breakdowns, and notes as I continue building and learning."
+  },
+
+  "contact": {
+    "email": "rachittaneja6@gmail.com",
+    "github": "https://github.com/rachittaneja56-max",
+    "linkedin": "https://www.linkedin.com/in/rachit-taneja-b98985382/"
+  }
+}
