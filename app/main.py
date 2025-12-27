@@ -23,7 +23,7 @@ def load_portfolio():
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://rachits-portfolio24.vercel.app/"  
+        "https://rachits-portfolio24.vercel.app"  
     ],
     allow_credentials=False,
     allow_methods=["*"],
