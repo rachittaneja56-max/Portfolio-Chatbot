@@ -8,8 +8,7 @@ from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 from fastapi import Request
 from fastapi.responses import JSONResponse
-
-
+from slowapi.middleware import SlowAPIMiddleware
 from app.llm import call_llm, ModelOverloadedError
 from app.prompt import build_system_prompt
 
@@ -17,6 +16,7 @@ app = FastAPI()
 DATA_PATH = Path("data/portfolio.json")
 limiter = Limiter(key_func=get_remote_address)
 app.state.limiter = limiter
+app.add_middleware(SlowAPIMiddleware)
 
 @app.exception_handler(RateLimitExceeded)
 def rate_limit_handler(request: Request, exc: RateLimitExceeded):
