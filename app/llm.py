@@ -1,33 +1,35 @@
 import os
-from google import genai
-from dotenv import load_dotenv
-
-load_dotenv()
-
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+from openai import OpenAI
 
 class ModelOverloadedError(Exception):
     pass
 
+client = OpenAI(
+    api_key=os.getenv("PERPLEXITY_API_KEY"),
+    base_url="https://api.perplexity.ai"
+)
 
-def call_gemini(system_prompt: str, user_question: str) -> str:
+def call_llm(system_prompt: str, user_question: str) -> str:
     try:
-        client = genai.Client(api_key=GEMINI_API_KEY)
-
-        prompt = f"""
-{system_prompt}
-
-User Question:
-{user_question}
-"""
-
-        response = client.models.generate_content(
-            model="gemini-2.5-flash-lite",
-            contents=[prompt]
+        response = client.chat.completions.create(
+            model="sonar",
+            messages=[
+                {
+                    "role": "system",
+                    "content": system_prompt
+                },
+                {
+                    "role": "user",
+                    "content": user_question
+                }
+            ],
+            temperature=0.2,
+            max_tokens=300
         )
 
-        return response.text
+        return response.choices[0].message.content
 
     except Exception as e:
-        print("GEMINI ERROR:", e)
-        raise ModelOverloadedError()
+        if "429" in str(e):
+            raise ModelOverloadedError()
+        raise

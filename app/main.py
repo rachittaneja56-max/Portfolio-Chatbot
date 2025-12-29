@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.llm import call_gemini, ModelOverloadedError
+from app.llm import call_llm, ModelOverloadedError
 from app.prompt import build_system_prompt
 
 app = FastAPI()
@@ -34,7 +34,7 @@ def chat(req: Question):
     system_prompt = build_system_prompt(portfolio)
 
     try:
-        answer = call_gemini(system_prompt, req.question)
+        answer = call_llm(system_prompt, req.question)
 
         return {
             "answer": answer.strip()
