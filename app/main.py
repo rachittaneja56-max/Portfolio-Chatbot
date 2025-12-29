@@ -47,7 +47,7 @@ app.add_middleware(
 
 @app.post("/chat")
 @limiter.limit("10/minute")
-def chat(req: Question):
+def chat(request: Request ,req: Question):
     portfolio = load_portfolio()
 
     system_prompt = build_system_prompt(portfolio)
